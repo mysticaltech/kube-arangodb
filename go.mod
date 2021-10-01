@@ -27,6 +27,7 @@ require (
 	github.com/arangodb-helper/go-certificates v0.0.0-20180821055445-9fca24fc2680
 	github.com/arangodb/arangosync-client v0.7.0
 	github.com/arangodb/go-driver v0.0.0-20210621075908-e7a6fa0cbd18
+	github.com/arangodb/go-driver/v2 v2.0.0-20211001091732-3470643be20a
 	github.com/arangodb/go-upgrade-rules v0.0.0-20180809110947-031b4774ff21
 	github.com/cenkalti/backoff v2.2.1+incompatible
 	github.com/coreos/go-semver v0.3.0 // indirect
@@ -36,7 +37,7 @@ require (
 	github.com/gin-gonic/gin v1.7.2
 	github.com/github-release/github-release v0.10.0 // indirect
 	github.com/go-playground/validator/v10 v10.8.0 // indirect
-	github.com/golang-jwt/jwt v3.2.1+incompatible
+	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/addlicense v0.0.0-20210428195630-6d92264d7170 // indirect
 	github.com/hashicorp/golang-lru v0.5.3 // indirect
