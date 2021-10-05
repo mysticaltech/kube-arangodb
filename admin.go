@@ -229,7 +229,7 @@ func getArangoEndpoint(secure bool, dnsName string) string {
 // getAgencyLeader returns the leader ID of the agency.
 func getAgencyLeader(ctx context.Context, conn connection.Connection) (string, error) {
 	url := connection.NewUrl("_api", "agency", "config")
-	output := make(map[string]interface{}, 0)
+	output := make(map[string]interface{})
 	resp, err := connection.CallGet(ctx, conn, url, &output)
 	if err != nil {
 		return "", err
@@ -380,11 +380,9 @@ func getInterruptionContext() context.Context {
 	signal.Notify(c, os.Interrupt, syscall.SIGTERM)
 	ctx, cancel := context.WithCancel(context.Background())
 	go func() {
-		select {
-		case <-c:
-			cancel()
-			return
-		}
+		// Block until SIGTERM or SIGINT occurs.
+		<-c
+		cancel()
 	}()
 
 	return ctx
